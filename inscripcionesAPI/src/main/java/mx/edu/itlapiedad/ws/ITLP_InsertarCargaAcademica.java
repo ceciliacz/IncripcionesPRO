@@ -19,7 +19,7 @@ import mx.edu.itlapiedad.models.InsertarCargaAcademica;
 
 @RestController
 @RequestMapping("/tec")
-@CrossOrigin(origins = "*", methods={RequestMethod.GET})
+@CrossOrigin(origins = "*", methods={RequestMethod.POST})
 
 public class ITLP_InsertarCargaAcademica {
 	@Autowired

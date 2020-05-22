@@ -186,8 +186,8 @@ public class JDBC implements DAO {
  	
  	@Override
 	public void insertar(InsertarCargaAcademica InsertarCargaAcademica) {
-		sql = "INSERT INTO carga_academica (idcarga_academica, semestre_idsemestre, materias_idmaterias, alumnos_idAlumno) VALUES(?, ?, ?, ?)";
-		conexion.update(sql, InsertarCargaAcademica.getIdcarga_academica(), InsertarCargaAcademica.getSemestre_idsemestre(), 
+		sql = "INSERT INTO carga_academica (semestre_idsemestre, materias_idmaterias, alumnos_idAlumno) VALUES(?, ?, ?)";
+		conexion.update(sql, InsertarCargaAcademica.getSemestre_idsemestre(), 
 				InsertarCargaAcademica.getMaterias_idmaterias(), 
 				InsertarCargaAcademica.getAlumnos_idAlumno());
 		
@@ -207,6 +207,14 @@ public class JDBC implements DAO {
 				pago.getSemestre_idsemestre(), 
 				pago.getAlumnos_idAlumno());
 		
+	}
+ 	
+ 	
+ 	@Override
+	public List<Docentes> buscarDocentePorDepartamento(int departamento_iddepartamento) {
+		// TODO Auto-generated method stub
+		sql="select * from docentes where departamento_iddepartamento = ?";
+		return conexion.query(sql,new RM(), departamento_iddepartamento);
 	}
 
 

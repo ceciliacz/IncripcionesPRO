@@ -18,6 +18,7 @@ public class RM implements RowMapper<Docentes>{
 		docente.setApellido(rs.getString("apellido"));
 		docente.setRFC(rs.getString("RFC"));
 		docente.setMail(rs.getString("mail"));
+		docente.setDepartamento_iddepartamento(rs.getInt("departamento_iddepartamento"));
 		return docente;
 	}
 	

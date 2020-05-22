@@ -10,7 +10,6 @@ public class RMInsertarCargaAcademica implements RowMapper<InsertarCargaAcademic
 	@Override
 	public InsertarCargaAcademica mapRow(ResultSet rs, int rowNum) throws SQLException {
 		InsertarCargaAcademica InsertarCargaAcademica= new InsertarCargaAcademica();
-		InsertarCargaAcademica.setIdcarga_academica(rs.getInt("idcarga_academica"));
 		InsertarCargaAcademica.setSemestre_idsemestre(rs.getInt("semestre_idsemestre"));
 		InsertarCargaAcademica.setMaterias_idmaterias(rs.getInt("materias_idmaterias"));
 		InsertarCargaAcademica.setAlumnos_idAlumno(rs.getInt("alumnos_idalumnos"));
